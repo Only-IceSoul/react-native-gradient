@@ -26,9 +26,9 @@ class SweepGradientViewManager : ViewGroupManager<SweepGradientView>() {
     override fun setBackgroundColor(view: SweepGradientView, c:Int){}
 
     @ReactProp(name = "startPoint")
-    fun setStartPoint(view: LinearGradientView, m:ReadableMap?){}
+    fun setStartPoint(view: SweepGradientView, m:ReadableMap?){}
     @ReactProp(name = "endPoint",)
-    fun setEndPoint(view: LinearGradientView, m:ReadableMap?){}
+    fun setEndPoint(view: SweepGradientView, m:ReadableMap?){}
 
     @ReactProp(name = "centerX",defaultFloat = 0.5f)
      fun setCenterX(view: SweepGradientView, v:Float){

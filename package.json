@@ -1,6 +1,6 @@
 {
-  "name": "react-native-gradient",
-  "title": "React Native Gradient",
+  "name": "react-native-gradientview",
+  "title": "React Native Gradient View",
   "version": "0.0.1",
   "description": "TODO",
   "main": "index.js",
@@ -26,7 +26,7 @@
   ],
   "author": {
     "name": "Juan J LF",
-    "email": "justin_lf@msn.com"
+    "email": "justinjlf21@gmail.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",

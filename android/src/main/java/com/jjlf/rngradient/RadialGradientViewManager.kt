@@ -3,6 +3,7 @@ package com.jjlf.rngradient
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Shader
+import android.util.Log
 import android.util.TypedValue
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
@@ -27,9 +28,9 @@ class RadialGradientViewManager : ViewGroupManager<RadialGradientView>() {
     override fun setBackgroundColor(view: RadialGradientView, c:Int){}
 
     @ReactProp(name = "startPoint")
-    fun setStartPoint(view: LinearGradientView, m:ReadableMap?){}
+    fun setStartPoint(view: RadialGradientView, m:ReadableMap?){}
     @ReactProp(name = "endPoint",)
-    fun setEndPoint(view: LinearGradientView, m:ReadableMap?){}
+    fun setEndPoint(view: RadialGradientView, m:ReadableMap?){}
 
     @ReactProp(name = "centerX",defaultFloat = 0.5f)
     fun setCenterX(view: RadialGradientView, v:Float){
@@ -58,7 +59,8 @@ class RadialGradientViewManager : ViewGroupManager<RadialGradientView>() {
     @ReactProp(name = "radius")
     fun setRadius(view: RadialGradientView, v:ReadableMap?){
         var r = try { v!!.getDouble("value") }catch (e:Error){ 1.0 }.toFloat()
-        val m =  try { v!!.getString("multiplier")!! }catch (e:Error){ "none" }
+        val m =  try { v!!.getString("multiplier") ?: "none" }catch (e:Error){ "none" }
+
         val mDrawable = view.getDrawable()
 
         val t = when(m){

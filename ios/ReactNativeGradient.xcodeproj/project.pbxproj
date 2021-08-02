@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D0D8DDE826B874A800E36C67 /* RadialGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDDD26B874A800E36C67 /* RadialGradient.m */; };
+		D0D8DDE926B874A800E36C67 /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDDE26B874A800E36C67 /* LinearGradient.swift */; };
+		D0D8DDEA26B874A800E36C67 /* LinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDDF26B874A800E36C67 /* LinearGradient.m */; };
+		D0D8DDEB26B874A800E36C67 /* ConicGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE026B874A800E36C67 /* ConicGradient.m */; };
+		D0D8DDEC26B874A800E36C67 /* ConicGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE126B874A800E36C67 /* ConicGradientView.swift */; };
+		D0D8DDED26B874A800E36C67 /* ConicGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE226B874A800E36C67 /* ConicGradient.swift */; };
+		D0D8DDEE26B874A800E36C67 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE326B874A800E36C67 /* GradientLayer.swift */; };
+		D0D8DDEF26B874A800E36C67 /* RadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE426B874A800E36C67 /* RadialGradient.swift */; };
+		D0D8DDF026B874A800E36C67 /* LinearGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE526B874A800E36C67 /* LinearGradientView.swift */; };
+		D0D8DDF126B874A800E36C67 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE626B874A800E36C67 /* extension.swift */; };
+		D0D8DDF226B874A800E36C67 /* RadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D8DDE726B874A800E36C67 /* RadialGradientView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +34,18 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libReactNativeGradient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeGradient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0D8DDD926B873FD00E36C67 /* ReactNativeGradient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactNativeGradient-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0D8DDDD26B874A800E36C67 /* RadialGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialGradient.m; sourceTree = "<group>"; };
+		D0D8DDDE26B874A800E36C67 /* LinearGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
+		D0D8DDDF26B874A800E36C67 /* LinearGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearGradient.m; sourceTree = "<group>"; };
+		D0D8DDE026B874A800E36C67 /* ConicGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConicGradient.m; sourceTree = "<group>"; };
+		D0D8DDE126B874A800E36C67 /* ConicGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConicGradientView.swift; sourceTree = "<group>"; };
+		D0D8DDE226B874A800E36C67 /* ConicGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConicGradient.swift; sourceTree = "<group>"; };
+		D0D8DDE326B874A800E36C67 /* GradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
+		D0D8DDE426B874A800E36C67 /* RadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradient.swift; sourceTree = "<group>"; };
+		D0D8DDE526B874A800E36C67 /* LinearGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearGradientView.swift; sourceTree = "<group>"; };
+		D0D8DDE626B874A800E36C67 /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		D0D8DDE726B874A800E36C67 /* RadialGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +70,19 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				D0D8DDE026B874A800E36C67 /* ConicGradient.m */,
+				D0D8DDE226B874A800E36C67 /* ConicGradient.swift */,
+				D0D8DDE126B874A800E36C67 /* ConicGradientView.swift */,
+				D0D8DDE626B874A800E36C67 /* extension.swift */,
+				D0D8DDE326B874A800E36C67 /* GradientLayer.swift */,
+				D0D8DDDF26B874A800E36C67 /* LinearGradient.m */,
+				D0D8DDDE26B874A800E36C67 /* LinearGradient.swift */,
+				D0D8DDE526B874A800E36C67 /* LinearGradientView.swift */,
+				D0D8DDDD26B874A800E36C67 /* RadialGradient.m */,
+				D0D8DDE426B874A800E36C67 /* RadialGradient.swift */,
+				D0D8DDE726B874A800E36C67 /* RadialGradientView.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				D0D8DDD926B873FD00E36C67 /* ReactNativeGradient-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +117,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -105,6 +144,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D8DDED26B874A800E36C67 /* ConicGradient.swift in Sources */,
+				D0D8DDF226B874A800E36C67 /* RadialGradientView.swift in Sources */,
+				D0D8DDEB26B874A800E36C67 /* ConicGradient.m in Sources */,
+				D0D8DDF026B874A800E36C67 /* LinearGradientView.swift in Sources */,
+				D0D8DDF126B874A800E36C67 /* extension.swift in Sources */,
+				D0D8DDEF26B874A800E36C67 /* RadialGradient.swift in Sources */,
+				D0D8DDEE26B874A800E36C67 /* GradientLayer.swift in Sources */,
+				D0D8DDEC26B874A800E36C67 /* ConicGradientView.swift in Sources */,
+				D0D8DDE926B874A800E36C67 /* LinearGradient.swift in Sources */,
+				D0D8DDE826B874A800E36C67 /* RadialGradient.m in Sources */,
+				D0D8DDEA26B874A800E36C67 /* LinearGradient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,32 +275,41 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ReactNativeGradient;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeGradient-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ReactNativeGradient;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeGradient-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

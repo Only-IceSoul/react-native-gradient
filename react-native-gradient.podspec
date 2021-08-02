@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   # optional - use expanded license entry instead:
   # s.license    = { :type => "MIT", :file => "LICENSE" }
-  s.authors      = { "Your Name" => "yourname@email.com" }
-  s.platforms    = { :ios => "9.0" }
+  s.authors      = { "Juan Laura" => "justinjlf21@gmail.com" }
+  s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/github_account/react-native-gradient.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,c,cc,cpp,m,mm,swift}"

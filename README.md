@@ -90,8 +90,8 @@ import { LinearGradient, RadialGradient,ConicGradient ,Color } from 'react-nativ
 | --- | --- | --- | --- |
 | startPoint |  Object | android,web,ios | 0.5 - 0 |
 | endPoint |  Object | android,web,ios | 0.5 - 1 |
-| colors |  Array [Color]  | android,web,ios | 0.5 - 0 |
-| positions |  Array [number] | android,web,ios | 0.5 - 1 |
+| colors |  Array [Color]  | android,web,ios | white,black |
+| positions |  Array [number] | android,web,ios | undefined  |
 | tileMode |  String | android,web | 'clamp' |  
 ## RadialGradient 
 
@@ -99,8 +99,8 @@ import { LinearGradient, RadialGradient,ConicGradient ,Color } from 'react-nativ
 | --- | --- | --- | --- |
 | startPoint |  Object |ios | 0.5 - 0 |
 | endPoint |  Object | ios | 0.5 - 1 |
-| colors |  Array [Color]  | android,web,ios | 0.5 - 0 |
-| positions |  Array [number] | android,web,ios | 0.5 - 1 |
+| colors |  Array [Color]  | android,web,ios | white,black |
+| positions |  Array [number] | android,web,ios | undefined |
 | centerX |  number | android,web | 0.5 |
 | centerY |  number | android,web | 0.5 |
 | radius |  Object{ multiplier (android) } | android,web | 0.5 |
@@ -112,8 +112,8 @@ import { LinearGradient, RadialGradient,ConicGradient ,Color } from 'react-nativ
 | --- | --- | --- | --- |
 | startPoint |  Object | ios | 0.5 - 0 |
 | endPoint |  Object | ios | 0.5 - 1 |
-| colors |  Array [Color]  | android,web,ios | 0.5 - 0 |
-| positions |  Array [number] | android,web,ios | 0.5 - 1 |
+| colors |  Array [Color]  | android,web,ios | white,black |
+| positions |  Array [number] | android,web,ios | undefined |
 | centerX |  number | android,web | 0.5 |
 | centerY |  number | android,web | 0.5 |
 | conicRotation |  number | android,web | 0 |

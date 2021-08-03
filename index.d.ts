@@ -7,7 +7,7 @@ interface BaseGradientProps extends ViewProps {
     startPoint?:{ x:number,y:number }
     endPoint?:{ x:number,y:number }
     positions?:number[]
-    colors?: (number | number[] | string)[]
+    colors?: (number | string)[]
 }
 
 interface TileModeProp{
@@ -18,7 +18,8 @@ interface RadialProps extends TileModeProp{
     centerX?: number
     centerY?:number
     radius?: {
-        value:number,
+        value?:number,
+        valueWeb?:number,
         multiplier?: 'min' | 'max' | 'height' | 'width' | 'none'
     }
 }

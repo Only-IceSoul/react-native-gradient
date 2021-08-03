@@ -58,8 +58,8 @@ class RadialGradientViewManager : ViewGroupManager<RadialGradientView>() {
     }
     @ReactProp(name = "radius")
     fun setRadius(view: RadialGradientView, v:ReadableMap?){
-        var r = try { v!!.getDouble("value") }catch (e:Error){ 1.0 }.toFloat()
-        val m =  try { v!!.getString("multiplier") ?: "none" }catch (e:Error){ "none" }
+        var r = try { v!!.getDouble("value") }catch (e:Error){ 0.5 }.toFloat()
+        val m =  try { v!!.getString("multiplier") ?: "min" }catch (e:Error){ "min" }
 
         val mDrawable = view.getDrawable()
 

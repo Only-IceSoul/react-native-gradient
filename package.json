@@ -1,7 +1,7 @@
 {
   "name": "react-native-gradientview",
   "title": "React Native Gradient View",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Gradient Layer android,ios,web",
   "main": "index.js",
   "files": [

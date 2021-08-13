@@ -17,50 +17,12 @@ or
 
 `$ yarn add react-native-gradientview `
     
-## Android
-
-**Add Kotlin**
-
-/app/build.gradle 
-
-```gradle
-apply plugin: 'kotlin-android' 
-
-android {
-
-   dependencies {
-     // From node_modules
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-  
-    }
-}
-
-```
-
-/build.gradle
-
-```gradle
-buildscript {
-
-        repositories {
-            ...
-            mavenCentral()
-            jcenter()
-        }
-        ext.kotlin_version = '1.5.21'  //last version
-        dependencies {
-            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        }
-    }
-}
-
-```
 
 ## IOS
 
 **Add Swift**
 
-(If you are using expo sdk >=42 you don't need to do this)
+(expo sdk >=42 you don't need to do this)
 
 /ios/name_project
 

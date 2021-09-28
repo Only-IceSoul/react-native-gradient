@@ -1,12 +1,11 @@
 // main index.js
 
-import { Platform ,requireNativeComponent} from 'react-native';
 import ExtractColor from './src/Color'
-import LinearGradientWeb from './src/LinearGradientWeb'
-import RadialGradientWeb from './src/RadialGradientWeb'
-import ConicGradientWeb from './src/ConicGradientWeb'
+import LinearGradientComponent from './src/LinearGradient'
+import RadialGradientComponent from './src/RadialGradient'
+import ConicGradientComponent from './src/ConicGradient'
 
-export const LinearGradient = (Platform.OS === 'android' || Platform.OS === 'ios') ? requireNativeComponent('LinearGradient',null) : LinearGradientWeb
-export const RadialGradient =  (Platform.OS === 'android' || Platform.OS === 'ios') ? requireNativeComponent('RadialGradient',null) : RadialGradientWeb
-export const ConicGradient =  (Platform.OS === 'android' || Platform.OS === 'ios')  ? requireNativeComponent('ConicGradient',null) : ConicGradientWeb
+export const LinearGradient = LinearGradientComponent
+export const RadialGradient = RadialGradientComponent
+export const ConicGradient = ConicGradientComponent
 export const Color = ExtractColor;

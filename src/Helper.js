@@ -14,7 +14,7 @@ function getPositionConic(arr,index,length){
 
 const Helper = {
     getPosition:(arr,index,length)=>{
-        if(arr){
+        if(arr !== undefined){
             return `${arr[index] * 100}%`
         }
      
@@ -23,6 +23,7 @@ const Helper = {
             let sum = 1 / l
             return index == l ? "100%" : `${(index*sum) * 100}%`
         }
+
         return "0%"
     },
     getSpreadMethod:(tileMode)=>{

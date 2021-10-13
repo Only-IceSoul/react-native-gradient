@@ -201,7 +201,9 @@ class GradientLayer : CAGradientLayer{
             mBaseRect.origin = frame.origin
         }
         
+        disableAnimation()
         super.frame = mBaseRect
+        commit()
      
     }
     

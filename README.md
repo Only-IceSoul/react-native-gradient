@@ -48,25 +48,24 @@ import { LinearGradient, RadialGradient,ConicGradient ,Color } from 'react-nativ
 
 ## LinearGradient 
 
-| Name | type | OS | default |
-| --- | --- | --- | --- |
-| startPoint |  Object | android,web,ios | 0.5 - 0 |
-| endPoint |  Object | android,web,ios | 0.5 - 1 |
-| colors |  Array [Color]  | android,web,ios | white,black |
-| positions |  Array [number] | android,web,ios | undefined  |
-| tileMode |  String | android,web | 'clamp' |  
+| Name | type | default |
+| --- | --- | --- |
+| startPoint |  Object x y | 0.5 - 0 |
+| endPoint |  Object x y | 0.5 - 1 | 
+| colors |  Array [Color]  | white,black |
+| positions |  Array [number] | undefined  |
+| tileMode | (android,web)  String  | 'clamp' |  
 ## RadialGradient 
 
-| Name | type | OS | default |
-| --- | --- | --- | --- |
-| startPoint |  Object |ios | 0.5 - 0 |
-| endPoint |  Object | ios | 0.5 - 1 |
-| colors |  Array [Color]  | android,web,ios | white,black |
-| positions |  Array [number] | android,web,ios | undefined |
-| centerX |  number | android,web | 0.5 |
-| centerY |  number | android,web | 0.5 |
-| radius |  Object{ multiplier (android) } | android,web | 0.5 |
-| tileMode |  String | android,web | 'clamp' |
+| Name | type | default |
+| --- | --- | --- |
+| colors |  Array [Color]  | white,black |
+| positions |  Array [number] |  undefined |
+| cx |  number |  0.5 |
+| cy |  number |  0.5 |
+| rx |  number | 0.5 |
+| rx |  number | 0.5 |
+| tileMode | (android,web) String  | 'clamp' |
 
 ## ConicGradient 
 

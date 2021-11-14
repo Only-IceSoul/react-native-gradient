@@ -60,12 +60,12 @@ private float mStartX = 0.5f;
 private float mStartY = 0f;
 private float mEndX = 0.5f;
 private float mEndY = 1f;
-private float mRadius = 0.5f;
+private float mRadiusX = 0.5f;
+private float mRadiusY = 0.5f;
 private float mCenterX = 0.5f;
 private float mCenterY = 0.5f;
 private float mSweepRotation = 0f;
-private String mRadiusTarget = TO_MIN;
-private final Matrix mSweepMatrix = new Matrix();
+private final Matrix mGradientMatrix = new Matrix();
 private Shader.TileMode mTileMode = Shader.TileMode.CLAMP;
 
     GradientLayer() {
@@ -78,12 +78,17 @@ private Shader.TileMode mTileMode = Shader.TileMode.CLAMP;
 
         //MARK: Radial ,Sweep
 
-    GradientLayer setRadius(float v,String target) {
-        mRadius = Math.max(v, 0f);
-        mRadiusTarget = target;
+    GradientLayer setRadiusX(float v) {
+        mRadiusX = Math.max(v, 0f);
         return this;
     }
-        GradientLayer setCenterX(float v) {
+    GradientLayer setRadiusY(float v) {
+        mRadiusY = Math.max(v, 0f);
+        return this;
+    }
+
+
+    GradientLayer setCenterX(float v) {
         mCenterX = v;
         return this;
         }
@@ -238,20 +243,19 @@ private Shader.TileMode mTileMode = Shader.TileMode.CLAMP;
         if(RADIAL == mType) {
             float cx = mCenterX * mRect.width();
             float cy = mCenterY * mRect.height();
-            float r = (mRadiusTarget.equals(TO_MIN) ? mRadius * Math.min(mRect.width(), mRect.height())
-                    : mRadiusTarget.equals(TO_MAX) ? mRadius * Math.max(mRect.width(), mRect.height())
-                    : mRadiusTarget.equals(TO_WIDTH) ? mRadius * mRect.width()
-                    : mRadiusTarget.equals(TO_HEIGHT) ? mRadius * mRect.height()
-                    : mRadius);
-
+            float r = mRadiusX * mRect.width();
+            double ratio = mRadiusY / mRadiusX;
+            mGradientMatrix.reset();
+            mGradientMatrix.postScale(1f,(float) ratio,cx, cy);
             mPaint.setShader(new RadialGradient(cx, cy, r, mColors, mPositions, mTileMode));
+            mPaint.getShader().setLocalMatrix(mGradientMatrix);
         }else if(SWEEP == mType) {
             float cx = mCenterX * mRect.width();
             float cy = mCenterY * mRect.height();
-            mSweepMatrix.reset();
-            mSweepMatrix.postRotate(mSweepRotation, cx, cy);
+            mGradientMatrix.reset();
+            mGradientMatrix.postRotate(mSweepRotation, cx, cy);
             mPaint.setShader(new SweepGradient(cx, cy, mColors, mPositions));
-            mPaint.getShader().setLocalMatrix(mSweepMatrix);
+            mPaint.getShader().setLocalMatrix(mGradientMatrix);
         }else{
             float x1 = mStartX * mRect.width();
             float y1 = mStartY * mRect.height();

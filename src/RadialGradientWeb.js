@@ -6,14 +6,18 @@ import { StyleSheet } from 'react-native'
 const RadialGradientWeb = (props)=>{
 
   
-    const {startPoint,
-        endPoint,
-        centerX,
-        centerY,
+    const {
+        
+        svgKey,
+
+        cx,
+        cy,
+        rx,
+        ry,
         tileMode,
-        radius,
         colors,
         positions,
+
         style,
          ...rest} = props
 
@@ -35,28 +39,38 @@ const RadialGradientWeb = (props)=>{
     return style
     },[style])
 
-    const c = colors === undefined ? ['white','black'] : colors
-    const tm = tileMode === undefined ? 'clamp' : tileMode
-    const cx = centerX === undefined ? 0.5 :  centerX
-    const cy = centerY === undefined ? 0.5 :  centerX
-    const r = radius === undefined ? 0.5 : (radius.valueWeb === undefined ? 0.5 : radius.valueWeb)
+    const colorsArr = colors === undefined ? ['white','black'] : colors
 
+    const tm = tileMode === undefined ? 'clamp' : tileMode
+
+    const centerX = cx === undefined ? 0.5 : cx
+    const centerY = cy === undefined ? 0.5 : cy
+    const radiusX = rx === undefined ? 0.5 : rx
+    const radiusY = ry === undefined ? 0.5 : ry
+
+    const useKey = svgKey === undefined ? "" : svgKey
+
+    const gradientKey = `JJSRadialGradient${useKey}`
     return(
         <div {...rest} style={styleObject} >
             <svg viewBox="0 0 1 1"  style={{width:'100%',height:'100%'}} >
                 <defs>
-                    <radialGradient id="radialjjlf" spreadMethod={Helper.getSpreadMethod(tm)} 
-                    cx={`${cx * 100}%`}  cy={`${cy * 100}%`} r={`${r * 100}%`}>
-                        {c.map((color,index)=>{
-                            return(
-                                <stop key={index} offset={Helper.getPosition(positions,index,c.length)} stopColor={`${color}`} />
-                            )
-                        })}
+                    <radialGradient id={gradientKey}
+                     spreadMethod={Helper.getSpreadMethod(tm)} 
+                    gradientUnits="objectBoundingBox"
+                    gradientTransform={`translate(0.5 0.5) scale(1,${radiusY/radiusX}) translate(-0.5 -0.5)`}
+                    cx={centerX}  cy={centerY} r={radiusX}  
+                    >
+                         {colorsArr.map((color,index)=>{
+                                return(
+                                    <stop key={index} offset={Helper.getPosition(positions,index,colorsArr.length)} stopColor={color}  />
+                                )
+                            })}
  
                     </radialGradient>
                 </defs>
 
-                <rect width="1" height="1" fill="url('#radialjjlf')" />
+                <rect width="1" height="1" fill={`url('#${gradientKey}')`} />
             </svg>
         </div>
     

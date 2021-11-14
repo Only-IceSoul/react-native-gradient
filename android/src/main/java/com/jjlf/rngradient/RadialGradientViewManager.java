@@ -34,18 +34,13 @@ public class RadialGradientViewManager extends ViewGroupManager<RadialGradientVi
 
     }
 
-    @ReactProp(name = "startPoint")
-    public void setStartPoint(RadialGradientView view , ReadableMap m){}
-    @ReactProp(name = "endPoint")
-    public void setEndPoint(RadialGradientView view , ReadableMap m){}
-
-    @ReactProp(name = "centerX",defaultFloat = 0.5f)
-    public void setCenterX(RadialGradientView view , float v){
+    @ReactProp(name = "cx",defaultFloat = 0.5f)
+    public void setCx(RadialGradientView view , float v){
         view.getDrawable().setCenterX(v);
         view.getDrawable().invalidateSelf();
     }
-    @ReactProp(name = "centerY",defaultFloat = 0.5f)
-    public void setCenterY(RadialGradientView view , float v){
+    @ReactProp(name = "cy",defaultFloat = 0.5f)
+    public void setCy(RadialGradientView view , float v){
         view.getDrawable().setCenterY(v);
         view.getDrawable().invalidateSelf();
     }
@@ -56,32 +51,14 @@ public class RadialGradientViewManager extends ViewGroupManager<RadialGradientVi
         view.getDrawable().setTileMode(mode);
         view.getDrawable().invalidateSelf();
     }
-    @ReactProp(name = "radius")
-    public void setRadius(RadialGradientView view ,ReadableMap v){
-        float r = (float) ModUtil.getDouble(v,"value",0.5);
-        String m =  ModUtil.getString(v,"multiplier","min");
-
-        String t = "none";
-        switch(m){
-                case "max" :
-                    t =  GradientLayer.TO_MAX;
-                    break;
-                case "width" :
-                    t =  GradientLayer.TO_WIDTH;
-                    break;
-                case"height" :
-                    t = GradientLayer.TO_HEIGHT;
-                    break;
-                case"min" :
-                    t = GradientLayer.TO_MIN;
-                    break;
-                default:
-                    r = toDip(r,view);
-                    t = GradientLayer.TO_NONE;
-                    break;
-        }
-
-        view.getDrawable().setRadius(r,t);
+    @ReactProp(name = "rx",defaultFloat = 0.5f)
+    public void setRx(RadialGradientView view ,float v){
+        view.getDrawable().setRadiusX(v);
+        view.getDrawable().invalidateSelf();
+    }
+    @ReactProp(name = "ry",defaultFloat = 0.5f)
+    public void setRy(RadialGradientView view ,float v){
+        view.getDrawable().setRadiusY(v);
         view.getDrawable().invalidateSelf();
     }
 

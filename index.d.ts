@@ -4,8 +4,7 @@ import { Constructor, NativeMethods, ViewProps } from "react-native";
 
 
 interface BaseGradientProps extends ViewProps {
-    startPoint?:{ x:number,y:number }
-    endPoint?:{ x:number,y:number }
+    svgKey?:string
     positions?:number[]
     colors?: (number | string)[]
 }
@@ -14,14 +13,16 @@ interface TileModeProp{
     tileMode?: 'mirror' | 'repeat' | 'clamp'
 } 
 
+interface LinearProps extends TileModeProp{
+    startPoint?:{ x:number,y:number }
+    endPoint?:{ x:number,y:number }
+}
+
 interface RadialProps extends TileModeProp{
-    centerX?: number
-    centerY?:number
-    radius?: {
-        value?:number,
-        valueWeb?:number,
-        multiplier?: 'min' | 'max' | 'height' | 'width' | 'none'
-    }
+    cx?: number
+    cy?:number
+    rx?: number
+    ry?:number
 }
 
 interface ConicProps{
@@ -30,7 +31,7 @@ interface ConicProps{
     conicRotation?:number
 }
 
-declare class LinearComponent extends React.Component<TileModeProp & BaseGradientProps>  {}
+declare class LinearComponent extends React.Component<LinearProps & BaseGradientProps>  {}
 declare class RadialComponent extends React.Component<RadialProps & BaseGradientProps>  {}
 declare class ConicComponent extends React.Component<ConicProps & BaseGradientProps> {}
  declare const LinearGradientBase: Constructor<NativeMethods> & typeof LinearComponent;

@@ -54,23 +54,26 @@ class RadialGradientView: UIView {
         mDrawable.setPositions(v)
     }
     @objc func setCx(_ v:NSNumber?){
-        let v = CGFloat.init(truncating: v! ?? 0.5)
+        let v = CGFloat.init(truncating: v ?? 0.5)
+     
         if v != mCx{
             mCx = v
+           
             mDrawable.setStartPoint(.init(x: mCx, y: mCy))
+            mDrawable.setEndPoint(.init(x: mCx + mRx, y: mCy + mRy))
         }
        
     }
     @objc func setCy(_ v:NSNumber?){
-        let v = CGFloat.init(truncating: v! ?? 0.5)
-        if v != mCy {
+        let v = CGFloat.init(truncating: v ?? 0.5)
+        if v != mCy{
             mCy = v
             mDrawable.setStartPoint(.init(x: mCx, y: mCy))
+            mDrawable.setEndPoint(.init(x: mCx + mRx, y: mCy + mRy))
         }
-
     }
     @objc func setRx(_ v:NSNumber?){
-        let v = CGFloat.init(truncating: v! ?? 0.5)
+        let v = CGFloat.init(truncating: v ?? 0.5)
         if v != mRx{
             mRx = v
             mDrawable.setEndPoint(.init(x: mCx + mRx, y: mCy + mRy))
@@ -78,7 +81,7 @@ class RadialGradientView: UIView {
 
     }
     @objc func setRy(_ v:NSNumber?){
-        let v = CGFloat.init(truncating: v! ?? 0.5)
+        let v = CGFloat.init(truncating: v ?? 0.5)
         if v != mRy{
             mRy = v
             mDrawable.setEndPoint(.init(x:  mCx + mRx, y: mCy + mRy))

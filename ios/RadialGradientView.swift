@@ -14,6 +14,11 @@ class RadialGradientView: UIView {
 
     let mDrawable = GradientLayer()
     
+    private var mCx :CGFloat = 0.5
+    private var mCy :CGFloat = 0.5
+    private var mRx :CGFloat = 0.5
+    private var mRy :CGFloat = 0.5
+    
     
     init() {
         super.init(frame: .zero)
@@ -41,17 +46,6 @@ class RadialGradientView: UIView {
         }
     }
     
-    @objc func setStartPoint(_ v:[String:Any]?){
-        let x = v?["x"] as? CGFloat ?? 0.5
-        let y = v?["y"] as? CGFloat ?? 0.5
-        mDrawable.setStartPoint(CGPoint(x: x, y: y))
-        
-    }
-    @objc func setEndPoint(_ v:[String:Any]?){
-        let x = v?["x"] as? CGFloat ?? 1
-        let y = v?["y"] as? CGFloat ?? 1
-        mDrawable.setEndPoint(CGPoint(x: x, y: y))
-    }
     @objc func setColors(_ v:[Int]?){
         let colors = v != nil ? toCgColorArr(v!) : [UIColor.white.cgColor,UIColor.black.cgColor]
         mDrawable.setColor(colors)
@@ -59,10 +53,42 @@ class RadialGradientView: UIView {
     @objc func setPositions(_ v:[NSNumber]?){
         mDrawable.setPositions(v)
     }
-    @objc func setCenterX(_ v:NSNumber?){}
-    @objc func setCenterY(_ v:NSNumber?){}
-    @objc func setTileMode(_ v:String?){}
-    @objc func setRadius(_ v:[String:Any]?){}
+    @objc func setCx(_ v:NSNumber?){
+        let v = CGFloat.init(truncating: v! ?? 0.5)
+        if v != mCx{
+            mCx = v
+            mDrawable.setStartPoint(.init(x: mCx, y: mCy))
+        }
+       
+    }
+    @objc func setCy(_ v:NSNumber?){
+        let v = CGFloat.init(truncating: v! ?? 0.5)
+        if v != mCy {
+            mCy = v
+            mDrawable.setStartPoint(.init(x: mCx, y: mCy))
+        }
+
+    }
+    @objc func setRx(_ v:NSNumber?){
+        let v = CGFloat.init(truncating: v! ?? 0.5)
+        if v != mRx{
+            mRx = v
+            mDrawable.setEndPoint(.init(x: mCx + mRx, y: mCy + mRy))
+        }
+
+    }
+    @objc func setRy(_ v:NSNumber?){
+        let v = CGFloat.init(truncating: v! ?? 0.5)
+        if v != mRy{
+            mRy = v
+            mDrawable.setEndPoint(.init(x:  mCx + mRx, y: mCy + mRy))
+        }
+
+    }
+    @objc func setTileMode(_ v:String?){
+        
+    }
+
     func toCgColorArr(_ c:[Int]) -> [CGColor]{
         var colors = [CGColor]()
         for i in c {

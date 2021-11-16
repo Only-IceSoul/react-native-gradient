@@ -26,6 +26,8 @@ interface RadialProps extends TileModeProp{
 }
 
 interface ConicProps{
+    startPoint?:{ x:number,y:number }
+    endPoint?:{ x:number,y:number }
     centerX?: number
     centerY?:number
     conicRotation?:number
